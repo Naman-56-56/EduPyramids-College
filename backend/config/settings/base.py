@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "apps.spoken",
     "apps.cms",
     "apps.users",
+    "apps.payments",
 ]
 
 MIDDLEWARE = [
