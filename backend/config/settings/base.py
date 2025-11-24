@@ -153,3 +153,13 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.MD5PasswordHasher',
     # 'django.contrib.auth.hashers.CryptPasswordHasher',
 ]
+
+
+HDFC_CONFIG = {
+    "MERCHANT_ID": os.getenv("MERCHANT_ID"),
+    "CLIENT_ID": os.getenv("CLIENT_ID"),
+    "RESPONSE_KEY": os.getenv("RESPONSE_KEY"),
+    "HDFC_API_URL": os.getenv("HDFC_API_URL"),
+    "HDFC_API_KEY": os.getenv("HDFC_API_KEY"),
+    "ORDER_STATUS_URL": os.getenv("ORDER_STATUS_URL"),
+}

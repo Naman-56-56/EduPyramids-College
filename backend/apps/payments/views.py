@@ -1,6 +1,7 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
+from django.conf import settings
 from django.urls import reverse
 from django.http import JsonResponse
 from .models import AcademicSubscription, HDFCTransactionDetails, PayeeHdfcTransaction
@@ -60,3 +61,13 @@ def check_payment_status(request, order_id):
     amount = request.query_params.get("amount")
     result = poll_payment_status(order_id, email, Decimal(amount))
     return Response(result)
+
+@api_view(['POST'])
+def payment_callback(request):
+    data = request.data
+    
+    # validate checksum here
+    # verify amount/order_id
+    # update transaction model
+
+    return Response({"status": "received"})
